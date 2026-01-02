@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>svg-icon.js</title>
+  <link rel="stylesheet" href="https://renecss.org/rene.css">
+</head>
+<body class="column gap-xl padding-l align-center justify-center">
+  <h3>Basic</h3>
+  <div class="row gap-l">
+    <svg-icon src="https://api.iconify.design/mdi/home.svg"></svg-icon>
+    <svg-icon src="https://api.iconify.design/mdi/star.svg"></svg-icon>
+    <svg-icon src="https://api.iconify.design/mdi/heart.svg"></svg-icon>
+    <svg-icon src="https://api.iconify.design/mdi/bell.svg"></svg-icon>
+  </div>
+
+  <h3>Colors</h3>
+  <div class="row gap-l">
+    <svg-icon style="color:red" src="https://api.iconify.design/mdi/heart.svg"></svg-icon>
+    <svg-icon style="color:orange" src="https://api.iconify.design/mdi/star.svg"></svg-icon>
+    <svg-icon style="color:green" src="https://api.iconify.design/mdi/check.svg"></svg-icon>
+  </div>
+
+  <h3>Sizes</h3>
+  <div class="row gap-l align-end">
+    <svg-icon style="width:16px;height:16px" src="https://api.iconify.design/mdi/rocket.svg"></svg-icon>
+    <svg-icon style="width:24px;height:24px" src="https://api.iconify.design/mdi/rocket.svg"></svg-icon>
+    <svg-icon style="width:32px;height:32px" src="https://api.iconify.design/mdi/rocket.svg"></svg-icon>
+    <svg-icon style="width:48px;height:48px" src="https://api.iconify.design/mdi/rocket.svg"></svg-icon>
+    <svg-icon style="width:64px;height:64px" src="https://api.iconify.design/mdi/rocket.svg"></svg-icon>
+  </div>
+
+  <button class="padding-s radius-s" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Theme</button>
+
+  <script src="svg-icon.js"></script>
+</body>
+</html>

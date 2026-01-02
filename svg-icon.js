@@ -3,10 +3,9 @@
   const cache = {}
 
   async function fetchSVG(src) {
-    if (cache[src]) return cache[src]
-    const res = await fetch(src)
-    if (!res.ok) return null
-    cache[src] = await res.text()
+    if (!cache[src]) {
+      cache[src] = fetch(src).then(res => res.ok ? res.text() : null)
+    }
     return cache[src]
   }
 
@@ -15,8 +14,6 @@
 
     async updateIcon() {
       const iconName = this.innerHTML.trim()
-      this.innerHTML = ''
-
       const src = this.hasAttribute('src')
         ? this.getAttribute('src')
         : `${basePath.replace(/\/$/, '')}/${iconName}.svg`
@@ -38,6 +35,7 @@
         svg.setAttribute('height', h)
       }
 
+      this.innerHTML = ''
       this.appendChild(svg)
       this.applyColor()
     }
@@ -52,7 +50,7 @@
     connectedCallback() { this.updateIcon() }
 
     attributeChangedCallback(name, oldVal, newVal) {
-      if (name === 'src' && oldVal !== newVal) this.updateIcon()
+      if (name === 'src' && oldVal !== newVal && this.isConnected) this.updateIcon()
     }
   }
 
