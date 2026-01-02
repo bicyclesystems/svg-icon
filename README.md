@@ -1,106 +1,63 @@
 # svg-icon.js
 
-Web component for SVG icons. Works in any web framework and for any purpose. Optimized for smooth design and development workflow (we built it for ourselves!).
+Web component for SVG icons. Works in any web framework and for any purpose.
 
-## Install with Unpkg CDN
+## Install
 
-1. Add the following script to your page:
-   ```
-   <script src="https://unpkg.com/@rnbws/svg-icon.js/dist/svg-icon.min.js"></script>
-   ```
+Add the following script to your page:
 
-## Install with NPM
+```html
+<script src="https://bicyclesystems.github.io/svg-icon/svg-icon.js"></script>
+```
 
-1. On you Terminal
-   ```
-   npm i @rnbws/svg-icon.js
-   ```
-2. Set the `src-path` attribute in your script tag to define the default source:
+Set the `src-path` attribute to define the default icon source:
 
-   You can use relative path based on the root directory:
+```html
+<script src="https://bicyclesystems.github.io/svg-icon/svg-icon.js" src-path="icons/"></script>
+```
 
-   ```html
-   <script src="svg-icon.js" src-path="icons/"></script>
-   ```
+Or use an external CDN:
 
-   It can be also any other CDN:
-
-   ```html
-   <script
-     src="svg-icon.js"
-     src-path="https://raincons.rnbw.dev/icons"
-   ></script>
-   ```
-
-3. Enjoy icons/icons.html to view all your icons in a simple, organized, and searchable manner.
-4. Place all of your icons in `/icons` at your root directory.
-   ```
-   root/
-   ├─ icons/
-   │  ├─ icon1.svg
-   │  ├─ icon2.svg
-   │  ├─ icon3.svg/
-   ```
-   You're ready to go!
+```html
+<script src="https://bicyclesystems.github.io/svg-icon/svg-icon.js" src-path="https://raincons.rnbw.dev/icons"></script>
+```
 
 ## Usage
 
-1. Set the `icon-name` within the element's content.
+Set the icon name within the element's content:
 
-   ```html
-   <svg-icon>arrow</svg-icon>
-   ```
+```html
+<svg-icon>arrow</svg-icon>
+```
 
-   Or, you can do `folder/icon-name` if you've categorized your library into folders.
+Use folders to categorize your icons:
 
-   ```html
-   <svg-icon>arrows/right</svg-icon>
-   ```
+```html
+<svg-icon>arrows/right</svg-icon>
+```
 
-   Override the source directly by setting a different one in the `src` attribute. You can Either use internal or external links.
+Override the source directly with the `src` attribute:
 
-   ```html
-   <svg-icon src="https://rnbw.design/images/icon.svg"></svg-icon>
-   ```
+```html
+<svg-icon src="https://example.com/icon.svg"></svg-icon>
+```
 
-2. Colors are one of the main reasons `svg-icon.js` was created!
+## Styling
 
-   The fill color of svg-icons is set by default to the inherited color of the font, so it can be overridden using a plain CSS selector.
+The fill color inherits from the element's CSS `color` property:
 
-   ```html
-   <div style="color: red;">
-     <svg-icon>arrow</svg-icon>
-   </div>
-   ```
+```html
+<div style="color: red;">
+  <svg-icon>arrow</svg-icon>
+</div>
+```
 
-   And, you can always override colors using the `color` attribute.
+Set dimensions with CSS:
 
-   ```html
-   <svg-icon color="red">arrow</svg-icon>
-   ```
-
-3. You can set the `size` directly (or simply apply your own CSS).
-
-   ```html
-   <svg-icon size="80">arrow</svg-icon>
-   ```
+```html
+<svg-icon style="width: 80px; height: 80px;">arrow</svg-icon>
+```
 
 ## Dependencies
 
-Many thanks to [svg-inject](https://github.com/iconfu/svg-inject) for enabling the passing of properties to SVG files.
-
-## Documentation
-
-Visit [svg-icon.fyi](https://svg-icon.fyi) to view the full documentation.
-
-## Community
-
-The svg-icon.js community can be found on [GitHub Discussions](https://github.com/rnbwdev/svg-icon.js/discussions), where you can ask questions, voice ideas, and share your projects.
-
-Join [Rainbow's Discord](https://discord.com/invite/HycXz8TJkd) to chat with other community members about svg-icon.js.
-
-## Contributing
-
-Please see our [contributing.md](https://github.com/rnbwdev/svg-icon.js/blob/main/contributing.md).
-
-That's it! 🎉
+Built on [svg-inject](https://github.com/iconfu/svg-inject) for SVG property handling.
